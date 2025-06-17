@@ -190,6 +190,7 @@ resetBtn.addEventListener('click', () => {
 
 const timeSpan = document.querySelector('.time');
 const controlBtn = document.querySelector('.control');
+const resetTimeBtn = document.querySelector('.control2');
 
 let interval = null;
 let count = 30;
@@ -197,15 +198,18 @@ let count = 30;
 controlBtn.addEventListener('click', () => {
   if (controlBtn.textContent === 'start') {
     controlBtn.textContent = 'stop';
-    interval = setInterval(() => {
-      timeSpan.textContent = count;
-      count--;
 
-      if (count < 0) {
+    timeSpan.textContent = count;
+
+    interval = setInterval(() => {
+      count--;
+      if (count >= 0) {
+        timeSpan.textContent = count;
+      } else {
         clearInterval(interval);
-        timeSpan.textContent = "0";
+        timeSpan.textContent = "30"; 
         controlBtn.textContent = "start";
-        count = 30; // نعيد العداد للقيمة الأصلية
+        count = 30;
       }
     }, 1000);
   } else {
@@ -213,3 +217,11 @@ controlBtn.addEventListener('click', () => {
     controlBtn.textContent = 'start';
   }
 });
+
+resetTimeBtn.addEventListener('click', () => {
+  clearInterval(interval);            
+  count = 30;                        
+  timeSpan.textContent = count;   
+  controlBtn.textContent = 'start';   
+});
+
