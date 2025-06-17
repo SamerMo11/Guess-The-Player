@@ -10,3 +10,195 @@
     --color4:#21252B;
     --color5: #fff ;
 }
+body{
+    width: 100%;
+    height: auto;
+    font-family: sans-serif;
+    background:var(--color4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+}
+h1{
+    font-size: clamp(3vw,10vw,15vw);
+    color: var(--color1);
+}
+.players{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.players p{
+    width: 45%;
+    /* padding: 20px 0px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 80px;
+    font-size: clamp(3vw, 5vw, 10vw);
+    text-align: center;
+    padding-inline: 2px;
+    text-transform: capitalize;
+    background: var(--color1);
+    color: var(--color3);
+    font-weight: 700;
+    /* box-shadow: 0 5px 5px 0px var(--color1) ; */
+}
+.players a,
+.players span{
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.players p a{
+    top: 90%;
+    left: 50%;
+    font-size: clamp(1vw,3vw,10vw);
+}
+.players p span{
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background: var(--color3);
+    color: var(--color1);
+    font-size: clamp(1vw,6vw,10vw);
+    width: 101%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: .3s;
+}
+.players span.clip{
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+}
+
+
+
+
+.teams{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.teams .team{
+    width: 40%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.teams .team p {
+    color: var(--color1);
+    font-size: clamp(1vw,6vw,10vw);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.teams .team .counter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.teams .team .counter button{
+    background-color: var(--color3);
+    border: none;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1vw,7vw,10vw);
+    color: var(--color5);
+    border-radius: 5px;
+}
+.teams .team .counter span{
+    color: var(--color5);
+    font-size: clamp(1vw,7vw,10vw);
+}
+
+.refresh, .reset
+{
+    width: 45%;
+    padding: 10px 0px;
+    text-transform: capitalize;
+    color: var(--color1);
+    background-color: var(--color3);
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(1vw,4vw,10vw);
+    font-weight: 500;
+}
+
+
+
+.timer{
+    width: 60%;
+    height: auto;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.timer > p{
+    /* width: 100%; */
+    /* text-align: left; */
+    color: var(--color1);
+    font-size: clamp(1vw,6vw,10vw);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.timer div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: clamp(1vw,6vw,10vw);
+
+}
+.timer div > span{
+    width: 100%;
+    text-align: left;
+    color: var(--color5);
+    font-size: clamp(10vw,15vw,20vw);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.timer div > button{
+        background-color: var(--color3);
+    border: none;
+    /* width: 25px; */
+    /* height: 25px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1vw,5vw,10vw);
+    color: var(--color5);
+    border-radius: 5px;
+    text-transform: capitalize;
+    padding: 10px 15px;
+}
+.owner {
+    font-size: clamp(4vw, 7vw, 10vw);
+    text-transform: capitalize;
+    color: var(--color5);
+    margin-block: 25px 10px;
+}
+.owner a{
+    color: var(--color1);
+}
+.owner a:visited{
+    color: var(--color1);
+
+}
